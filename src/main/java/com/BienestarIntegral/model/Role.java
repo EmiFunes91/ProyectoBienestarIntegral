@@ -1,8 +1,13 @@
 package com.BienestarIntegral.model;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Set;
 
+@Setter
+@Getter
 @Entity
 public class Role {
 
@@ -16,27 +21,4 @@ public class Role {
     @ManyToMany(mappedBy = "roles")
     private Set<UserModel> users;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Set<UserModel> getUsers() {
-        return users;
-    }
-
-    public void setUsers(Set<UserModel> users) {
-        this.users = users;
-    }
 }
